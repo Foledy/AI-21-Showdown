@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using BlackJack.Interfaces;
+using BlackJack.ScriptableObjects;
+using BlackJack.Types;
 using Random = UnityEngine.Random;
 
 namespace BlackJack

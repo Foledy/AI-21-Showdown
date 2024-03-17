@@ -2,7 +2,7 @@
 using BlackJack.Interfaces;
 using UnityEngine;
 
-namespace BlackJack
+namespace BlackJack.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "GameCardSet", menuName = "BlackJack/Create new CardSet")]
     public class GameCardSet : ScriptableObject, IGameCardSet

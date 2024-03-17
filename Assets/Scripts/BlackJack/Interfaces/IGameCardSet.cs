@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BlackJack.ScriptableObjects;
 
 namespace BlackJack.Interfaces
 {

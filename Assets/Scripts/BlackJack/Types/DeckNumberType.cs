@@ -1,4 +1,4 @@
-﻿namespace BlackJack
+﻿namespace BlackJack.Types
 {
     public enum DeckNumberType
     {

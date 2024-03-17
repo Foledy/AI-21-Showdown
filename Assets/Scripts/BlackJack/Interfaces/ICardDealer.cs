@@ -1,4 +1,7 @@
-﻿namespace BlackJack.Interfaces
+﻿using BlackJack.ScriptableObjects;
+using BlackJack.Types;
+
+namespace BlackJack.Interfaces
 {
     public interface ICardDealer
     {
