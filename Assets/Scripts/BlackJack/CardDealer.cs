@@ -93,7 +93,7 @@ namespace BlackJack
             var cardSet = new Queue<GameCard>();
             var length = source.Count;
 
-            for (var i = 0; i < 100; i++)
+            for (var i = 0; i < 210; i++)
             {
                 var first = Random.Range(0, length - 1);
                 var second = Random.Range(0, length - 1);
