@@ -862,8 +862,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: AI 21 Showdown
-  metroPackageVersion: 
+  metroPackageName: AI21Showdown
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -871,7 +871,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: AI 21 Showdown
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: AI 21 Showdown
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
