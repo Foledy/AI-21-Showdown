@@ -6,7 +6,5 @@ namespace BlackJack.ScriptableObjects
     public class BlackJackSettings : ScriptableObject
     {
         public int PointsToWin;
-        [Tooltip("Place '-1' for unlimited time")]
-        public float TimePerMove;
     }
 }

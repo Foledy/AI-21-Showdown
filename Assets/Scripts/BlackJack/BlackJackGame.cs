@@ -20,7 +20,7 @@ namespace BlackJack
         private PlayerHandInfo _enemyHandInfo;
         private bool _isGameActive;
 
-        private void Start()
+        private void Awake()
         {
             _dealer = new CardDealer(_cardSet);
         }
@@ -104,10 +104,11 @@ namespace BlackJack
             if (result != GameResult.None)
             {
                 OnGameFinished?.Invoke(result);
-                    
-                ResetGame();
             }
         }
+
+        public PlayerHandInfo GetMyHand(PlayerType type) =>
+            type == PlayerType.Player ? _playerHandInfo : _enemyHandInfo;
 
         private GameCard GetCard(DeckNumberType number)
         {
@@ -127,8 +128,10 @@ namespace BlackJack
         {
             _isGameActive = false;
             
-            _playerHandInfo = new PlayerHandInfo();
-            _enemyHandInfo = new PlayerHandInfo();
+            _playerHandInfo = new PlayerHandInfo(_gameSettings.PointsToWin);
+            _enemyHandInfo = new PlayerHandInfo(_gameSettings.PointsToWin);
+            
+            _dealer.MixCardDecks();
         }
 
         private bool HavePointsExceededLimit(int points) => points > _gameSettings.PointsToWin;
