@@ -35,14 +35,11 @@ public class PlayerMovement : MonoBehaviour
     //метод в котором будет происходить движения игрока
     private void PlayerMovements()
     {
+        // передвижение WSAD
         if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.W))
         {
             _rb.MovePosition(transform.position + transform.forward * _speedPlayarMin * Time.fixedDeltaTime);
-            if(_speedPlayarMin >= 0.1f)
-            {
-                _animator.SetBool("Walcing", true);
-            }
-            
+            _animator.SetBool("Walcing", true);
             AccelerationPlayar(0.03f);
         }
 
@@ -53,19 +50,42 @@ public class PlayerMovement : MonoBehaviour
             AccelerationPlayar(0.03f);
         }
 
-        if (((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))))
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.A))
         {
-            _rb.MovePosition(transform.position +(-transform.right + transform.forward) * _speedPlayarMin * Time.fixedDeltaTime);
-            _animator.SetBool("LeftForwardDiadonaleStrafeWalking", true);
-            _animator.SetBool("Walcing", false);
+            _rb.MovePosition(transform.position + transform.right * -_speedPlayarMin * Time.fixedDeltaTime);
+            _animator.SetBool("WalcingBack", true);
+            AccelerationPlayar(0.03f);
+        }
+
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.D))
+        {
+            _rb.MovePosition(transform.position - transform.right * -_speedPlayarMin * Time.fixedDeltaTime);
+            _animator.SetBool("RightWalcing", true);
+            AccelerationPlayar(0.03f);
+        }
+
+        // передвижение по диагонале
+        if (((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))))
+        {
+            _rb.MovePosition(transform.position + (-transform.right + transform.forward) * _speedPlayarMin * Time.fixedDeltaTime);
             AccelerationPlayar(0f);
         }
 
         if (((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))))
         {
             _rb.MovePosition(transform.position + (transform.right + transform.forward) * _speedPlayarMin * Time.fixedDeltaTime);
-            _animator.SetBool("RightStrafeWalking", true);
-            _animator.SetBool("Walcing", false);
+            AccelerationPlayar(0f);
+        }
+
+        if (((Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))))
+        {
+            _rb.MovePosition(transform.position + (-transform.right +(-transform.forward)) * _speedPlayarMin * Time.fixedDeltaTime);
+            AccelerationPlayar(0f);
+        }
+
+        if (((Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))))
+        {
+            _rb.MovePosition(transform.position + (transform.right + (-transform.forward)) * _speedPlayarMin * Time.fixedDeltaTime);
             AccelerationPlayar(0f);
         }
     }
