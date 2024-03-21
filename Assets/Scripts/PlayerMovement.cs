@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.W))
         {
             _rb.MovePosition(transform.position + transform.forward * _speedPlayarMin * Time.fixedDeltaTime);
-            _animator.SetBool("Walcing", true);
+            _animator.SetBool("WalcingForward", true);
             AccelerationPlayar(0.03f);
         }
 
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.A))
         {
             _rb.MovePosition(transform.position + transform.right * -_speedPlayarMin * Time.fixedDeltaTime);
-            _animator.SetBool("WalcingBack", true);
+            _animator.SetBool("LeftWalcing", true);
             AccelerationPlayar(0.03f);
         }
 
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.W))
         {
-            _animator.SetBool("Walcing", false);
+            _animator.SetBool("WalcingForward", false);
             _speedPlayarMin = 0;
         }
 
