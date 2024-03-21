@@ -1,0 +1,95 @@
+{
+    "name": "PlayerMovement",
+    "maps": [
+        {
+            "name": "Playar",
+            "id": "e281fc00-f0a1-48df-ba54-66eb92e40a91",
+            "actions": [
+                {
+                    "name": "Movemoment",
+                    "type": "Value",
+                    "id": "79d90adf-d46b-4fb1-be69-0d75bbe59737",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WSAD",
+                    "id": "186d9940-86fd-472c-8c95-82cae371476b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movemoment",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "bfc0f0f3-621c-478a-b613-a1b7aebae842",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keybard und Mause",
+                    "action": "Movemoment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "e8af36fd-1097-469a-ad40-905a20832974",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keybard und Mause",
+                    "action": "Movemoment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "419f2648-c78b-45e3-9136-a59af87cccf0",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keybard und Mause",
+                    "action": "Movemoment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "896e8fc2-e695-4650-b6ab-b411ec0571c1",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keybard und Mause",
+                    "action": "Movemoment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keybard und Mause",
+            "bindingGroup": "Keybard und Mause",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

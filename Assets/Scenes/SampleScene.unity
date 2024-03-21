@@ -128,21 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
   m_PrefabInstance: {fileID: 1100875063}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &616722921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616722920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4aa0c1e5a09a414e83f8cd3feb252c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
-  _speedPlayarMin: 0
-  _speedPlayarMax: 4
 --- !u!54 &616722922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,11 +178,6 @@ CapsuleCollider:
   m_Height: 1.8342665
   m_Direction: 1
   m_Center: {x: 0.00844872, y: 0.89855534, z: 0}
---- !u!4 &616722924 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
-  m_PrefabInstance: {fileID: 1100875063}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &616722925
 Animator:
   serializedVersion: 5
@@ -219,6 +199,65 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &616722926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616722920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: efbd3bbb02af8144d94dcd795c699303, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 616722927}
+        m_TargetAssemblyTypeName: PlayarMove, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 79d90adf-d46b-4fb1-be69-0d75bbe59737
+    m_ActionName: Playar/Movemoment[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Playar
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 1391874469}
+--- !u!114 &616722927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616722920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ca78a2d59f599459aba4a5fe3a3013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,10 +416,13 @@ PrefabInstance:
       addedObject: {fileID: 616722922}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 616722921}
+      addedObject: {fileID: 616722925}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 616722925}
+      addedObject: {fileID: 616722926}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616722927}
   m_SourcePrefab: {fileID: 100100000, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
 --- !u!1 &1391874467
 GameObject:
@@ -392,8 +434,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1391874470}
   - component: {fileID: 1391874469}
-  - component: {fileID: 1391874468}
-  - component: {fileID: 1391874471}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -401,14 +441,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1391874468
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391874467}
-  m_Enabled: 1
 --- !u!20 &1391874469
 Camera:
   m_ObjectHideFlags: 0
@@ -475,22 +507,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1391874471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391874467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5191f5ac1ca8baf4ea52008b6eb91363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 616722924}
-  sensitivity: 2
-  distance: 3.5
-  height: 2
 --- !u!1 &1553731138
 GameObject:
   m_ObjectHideFlags: 0

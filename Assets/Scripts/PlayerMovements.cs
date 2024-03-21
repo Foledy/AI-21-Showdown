@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovements : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     //переменная для скорость движения игрока
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerMovements();
+        PlayerMovement();
         AnimationOff();
     }
 
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //метод в котором будет происходить движения игрока
-    private void PlayerMovements()
+    private void PlayerMovement()
     {
         // передвижение WSAD
         if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.W))
