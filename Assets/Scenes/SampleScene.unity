@@ -199,7 +199,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &616722926
+--- !u!114 &616722928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: efbd3bbb02af8144d94dcd795c699303, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 9789527bfaf13de408f0573fbf57de94, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 616722927}
+      - m_Target: {fileID: 616722931}
         m_TargetAssemblyTypeName: PlayarMove, Assembly-CSharp
-        m_MethodName: OnMove
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -238,14 +238,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 79d90adf-d46b-4fb1-be69-0d75bbe59737
-    m_ActionName: Playar/Movemoment[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionId: a4e60565-03fd-4bc8-a7fe-7162eb24918f
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Playar
+  m_DefaultControlScheme: Keyboard und Mause
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 1391874469}
---- !u!114 &616722927
+  m_Camera: {fileID: 0}
+--- !u!114 &616722931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,10 +254,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 616722920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ca78a2d59f599459aba4a5fe3a3013, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f78142448e7ade4e87732ac1dfa583b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _speedPlayer: 10
+--- !u!143 &616722933
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616722920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.834267
+  m_Radius: 0.2103231
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       propertyPath: m_Name
-      value: X Bot
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -419,10 +445,13 @@ PrefabInstance:
       addedObject: {fileID: 616722925}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 616722926}
+      addedObject: {fileID: 616722928}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 616722927}
+      addedObject: {fileID: 616722931}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616722933}
   m_SourcePrefab: {fileID: 100100000, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
 --- !u!1 &1391874467
 GameObject:
