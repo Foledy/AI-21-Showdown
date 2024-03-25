@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSpeed: 5
-  _currentSpeed: 0
-  _animator: {fileID: 616722925}
+  _currentSpeed: 2
+  movement: {x: 0, y: 0, z: 0}
 --- !u!143 &616722933
 CharacterController:
   m_ObjectHideFlags: 0
@@ -286,6 +286,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!4 &616722934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
+  m_PrefabInstance: {fileID: 1100875063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616722935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616722920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8adcc53fb368a4fad30ff3d8bd94ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 616722925}
+  _playerMove: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +453,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1391874470}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
@@ -451,6 +473,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 616722931}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616722935}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b96d492ef588ba741be0bb110f3486ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 616722933}
@@ -532,11 +557,11 @@ Transform:
   m_GameObject: {fileID: 1391874467}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08237652, y: -0.026906073, z: 0.0022234577, w: 0.9962356}
-  m_LocalPosition: {x: 0.15719986, y: 2.0786989, z: -3.0559635}
+  m_LocalPosition: {x: 0.15719986, y: 2.0626988, z: -3.0559635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 616722934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553731138
 GameObject:
@@ -651,4 +676,3 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1553731142}
   - {fileID: 1100875063}
-  - {fileID: 1391874470}

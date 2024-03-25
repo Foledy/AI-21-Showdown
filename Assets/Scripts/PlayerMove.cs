@@ -1,90 +1,59 @@
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _maxSpeed = 5;
-    [SerializeField] private float _currentSpeed = 0;
-    [SerializeField] private float _acceleration = 0.01f;
-    
-    private PlayerInput _Input;
+    [SerializeField] private float _currentSpeed = 2;
+
+    private PlayerInput _input;
     private Rigidbody _rigidbody;
-    [SerializeField] private Animator _animator;
-    private Vector3 _movement;
+
+    public Vector3 movement;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _Input = new PlayerInput();
-        _Input.Player.Move.performed += _ => Move();
+        _input = new PlayerInput();
+        _input.Player.Move.performed += _ => Movement();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        Acceleration();
+        Movement();
     }
 
     private void OnEnable()
     {
-        _Input.Player.Enable();
+        _input.Player.Enable();
     }
 
     private void OnDisable()
     {
-        _Input.Player.Disable();
+        _input.Player.Disable();
     }
 
-    private void Move()
+    private void Movement()
     {
-        Acceleration();
-        var valuue = _Input.Player.Move.ReadValue<Vector2>();
-        _movement = new Vector3(valuue.x, 0, valuue.y);
-        _rigidbody.MovePosition(transform.position + _movement * _currentSpeed * Time.fixedDeltaTime);
-        AnimationOn();
-        AnamationOff();
-        Debug.Log(_movement);
+        var _valuue = _input.Player.Move.ReadValue<Vector2>();
+        movement = new Vector3(_valuue.x, 0, _valuue.y);
+        _rigidbody.velocity = movement * _currentSpeed;
+        Debug.Log(movement);
     }
 
     private void Acceleration() 
     {
-        if ((_movement.magnitude >= 0.5f))
+        if ((movement.magnitude >= 0.5f))
         {
-            _currentSpeed +=  + Time.fixedDeltaTime;
+            _currentSpeed +=  + Time.deltaTime;
             if(_currentSpeed >= _maxSpeed)
             {
                 _currentSpeed = _maxSpeed;
             }
         }
-        if (_movement.magnitude <= 0)
+        if (movement.magnitude <= 0)
         {
-            _currentSpeed = 1f;
-        }
-    }
-
-    private void AnimationOn()
-    {
-        if (_movement.z >= 1)
-        {
-            _animator.SetBool("WalcingForward", true);
-        }
-
-        if (_movement.z <= -1)
-        {
-            _animator.SetBool("WalcingBack", true);
-        }
-        
-        if(_movement.x <= -0.8 && (_movement.z <= 0.8))
-        {
-            _animator.SetBool("LeftForwardDiadonaleStrafeWalking", true);
-        }
-    }
-
-    private void AnamationOff()
-    {
-        if (_movement.magnitude == 0)
-        {
-            _animator.SetBool("WalcingForward", false);
-            _animator.SetBool("WalcingBack", false);
-            _animator.SetBool("LeftForwardDiadonaleStrafeWalking", false);
+            _currentSpeed = 2f;
         }
     }
 }
