@@ -1,6 +1,8 @@
 using UnityEngine;
+
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMove : MonoBehaviour
+
+public class PlayerMovement: MonoBehaviour
 {
     [SerializeField] private float _maxSpeed = 5;
     [SerializeField] private float _currentSpeed = 2;
@@ -33,7 +35,7 @@ public class PlayerMove : MonoBehaviour
         _input.Player.Disable();
     }
 
-    private void Movement()
+    public void Movement()
     {
         var _valuue = _input.Player.Move.ReadValue<Vector2>();
         movement = new Vector3(_valuue.x, 0, _valuue.y);
@@ -51,6 +53,7 @@ public class PlayerMove : MonoBehaviour
                 _currentSpeed = _maxSpeed;
             }
         }
+
         if (movement.magnitude <= 0)
         {
             _currentSpeed = 2f;
